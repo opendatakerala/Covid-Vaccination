@@ -10,3 +10,4 @@ OpenDataKerala Team has taken this data from the CoWin portal and put their utmo
 @jinoytommanjaly along with other OpenDataKerala Volunteers
 
 ### License
+The dataset shared under [ODBl](http://opendatacommons.org/licenses/odbl/) license.
