@@ -5,6 +5,7 @@ Open Data Kerala is releasing data of COVID-19 Vaccination in Kerala. Data relea
 
 ### Releases
 1.0 [Vaccination Data from March 8th to July 31st](https://github.com/opendatakerala/Covid-Vaccination/releases/tag/1.0)
+
 1.1 [Vaccination Data from March 8th to Aug 14th](https://github.com/opendatakerala/Covid-Vaccination/releases/tag/1.1)
 
 ### Disclaimer 
