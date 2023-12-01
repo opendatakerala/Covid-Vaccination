@@ -10,7 +10,7 @@ on:
     branches: [ "main", "develop" ]
 
 permissions:
-  contents: read|write|none
+  contents: write-all
   
 schedule:
     - cron: '30 21 * * *'
