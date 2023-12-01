@@ -9,11 +9,11 @@ on:
   pull_request:
     branches: [ "main", "develop" ]
 
-permissions:
-  contents: write-all
-  
-schedule:
+  schedule:
     - cron: '30 21 * * *'
+
+permissions: write-all
+  
 
 jobs:
   build:
