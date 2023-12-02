@@ -5,12 +5,12 @@ name: Daily Data Updater
 
 on:
   push:
-    branches: [ "main","develop" ]
+    branches: [ "main"]
   pull_request:
-    branches: [ "main", "develop" ]
+    branches: [ "main" ]
 
   schedule:
-    - cron: '30 21 * * *'
+    - cron: '0 0 22 * * *'
 
 permissions: write-all
   
