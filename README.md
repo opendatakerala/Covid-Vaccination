@@ -1,8 +1,7 @@
 # Covid-Vaccination Kerala
 
 
-[![Vaccine Data](https://github.com/opendatakerala/Covid-Vaccination/actions/workflows/daily-data-update.yml/badge.svg?branch=main)](https://github.com/opendatakerala/Covid-Vaccination/actions/workflows/daily-data-update.yml)
-
+![Vaccine Data](https://github.com/opendatakerala/Covid-Vaccination/actions/workflows/daily-data-update.yml/badge.svg?branch=main)
 
 Open Data Kerala is releasing data of COVID-19 Vaccination in Kerala. Data released in here is from the CoWin Dashboard (https://dashboard.cowin.gov.in/) by Indian Government.
 
