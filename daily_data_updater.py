@@ -5,9 +5,11 @@ from pathlib import Path
 from collections import defaultdict
 from data_update import collect_data
 from datetime import datetime, timedelta
-today = datetime.now()
 
-days = pd.date_range(end=today, periods=4, freq='D')
+today = datetime.now()
+yesterday = today - timedelta(days = 1)
+
+days = pd.date_range(end=yesterday, periods=7, freq='D')
 
 
 headers = {'User-Agent':"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0"}
@@ -31,6 +33,5 @@ for key, dist in districts.items():
     Path(dist_path).mkdir(parents=True, exist_ok=True)
     if Path(dist_path + "/" + key + ".csv").is_file():
         old_df = pd.read_csv(dist_path + "/" + key + ".csv")
-        merged_df = pd.concat([old_df, dist_df]).drop_duplicates()
+        merged_df = pd.concat([old_df, dist_df]).drop_duplicates(['date'], keep='last')
         merged_df.to_csv(dist_path + "/" + key + ".csv", mode='w', header=True, index=None)
-    
