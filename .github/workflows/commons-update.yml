@@ -7,7 +7,7 @@ on:
   schedule:
     - cron: '0 23 * * *'
 
-permissions: read
+permissions: read|write|none
   
 env:
   PYWIKIBOT_TEST_RUNNING: 1
