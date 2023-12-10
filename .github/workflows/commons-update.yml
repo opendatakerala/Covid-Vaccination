@@ -11,7 +11,8 @@ permissions: read-all
   
 env:
   PYWIKIBOT_TEST_RUNNING: 1
-  PYWIKIBOT_USERNAME: Athulvis@keralacovidvaccineUpdater
+  PYWIKIBOT_USERNAME: Athulvis
+  PYWIKIBOT_BOTNAME: keralacovidvaccineUpdater
   PYWIKIBOT_LOGIN_LOGOUT: 1
   
 jobs:
@@ -39,6 +40,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install python3-dotenv
         pip install -r requirements.txt
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi   
 
@@ -46,14 +48,15 @@ jobs:
       run: |
         pwb generate_user_files -site:${{matrix.site}} -user:${{ env.PYWIKIBOT_USERNAME }} -v -debug;
 
+        echo "family = 'commons'" >> user-config.py
+        echo "mylang = 'commons'" >> user-config.py
         echo "usernames['commons']['commons'] = '${{ env.PYWIKIBOT_USERNAME }}'" >> user-config.py
+        echo "password_file = 'user-password.py'" >> user-config.py
         echo "max_retries = 3" >> user-config.py
         echo "noisysleep = float('inf')" >> user-config.py
         echo "maximum_GET_length = 5000" >> user-config.py
         echo "console_encoding = 'utf8'" >> user-config.py
-        echo "import os" >> user-config.py
-        echo "password_file = os.path.expanduser('passwordfile')" >> user-config.py
-        echo "('${{ env.PYWIKIBOT_USERNAME }}', '${{ secrets.PWD }}')" > passwordfile
+        echo "('${{ env.PYWIKIBOT_USERNAME }}', BotPassword('${{ env.PYWIKIBOT_BOTNAME }}','${{ secrets.PWD }}'))" > user-password.py
 
     - name: Update Commons
       timeout-minutes: 10
