@@ -11,7 +11,7 @@ permissions: read-all
   
 env:
   PYWIKIBOT_TEST_RUNNING: 1
-  PYWIKIBOT_USERNAME: Athulvis
+  PYWIKIBOT_USERNAME: Athulvis@keralacovidvaccineUpdater
   PYWIKIBOT_LOGIN_LOGOUT: 1
   
 jobs:
