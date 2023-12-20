@@ -6,8 +6,10 @@ name: Daily Data Updater
 on:
   push:
     branches: [ "main"]
+    paths: ['vaccine_data/**']
   pull_request:
     branches: [ "main" ]
+    paths: ['vaccine_data/**']
 
   schedule:
     - cron: '0 22 * * *'
